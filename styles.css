@@ -92,14 +92,37 @@ h1, h2, h3, p { margin-top: 0; }
 .section-topline { display: flex; justify-content: space-between; align-items: center; gap: 1rem; border-bottom: 1px solid var(--line); }
 .section-topline > span { color: var(--muted); font-size: .85rem; }
 .services-intro, .team-intro { margin: 2.5rem 0 2rem; display: flex; align-items: end; justify-content: space-between; gap: 2rem; }
+.services-intro { flex-direction: column; align-items: center; justify-content: center; gap: 0; text-align: center; }
+.services-intro h2 { text-align: center; }
+.anchor-drop { display: flex; flex-direction: column; align-items: center; margin: 1rem 0 1.2rem; color: var(--accent); }
+.anchor-rope { width: 10px; height: 5.5rem; background: radial-gradient(ellipse 4px 6px at 50% 50%, transparent 3px, var(--accent) 3.5px, transparent 4.5px) 0 0/10px 16px repeat-y; opacity:.85; transform: scaleY(0); transform-origin: top; transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+.anchor { width: 4.6rem; height: auto; opacity: 0; transform: translateY(-2.6rem); transform-origin: 50% 0; transition: transform 1s cubic-bezier(.3,1.35,.5,1) .15s, opacity .4s ease .15s; }
+.services-intro.is-visible .anchor-rope { transform: scaleY(1); }
+.services-intro.is-visible .anchor { opacity: 1; transform: none; animation: anchor-sway 4s ease-in-out 1.3s infinite; }
+@keyframes anchor-sway { 0%, 100% { rotate: -3deg; } 50% { rotate: 3deg; } }
+.services-intro > p { max-width: 30rem; }
+.js-enabled .services-intro[data-reveal] { opacity: 1; transform: none; }
+.js-enabled .services-intro h2, .js-enabled .services-intro > p { opacity: 0; transform: translateY(1.5rem); transition: opacity .7s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+.js-enabled .services-intro.is-visible h2 { opacity: 1; transform: none; }
+.js-enabled .services-intro.is-visible > p { opacity: 1; transform: none; transition-delay: 1.3s; }
+.js-enabled .services-intro .anchor-rope { transition-delay: .5s; }
+.js-enabled .services-intro .anchor { transition-delay: .6s, .6s; }
 .services-intro > p, .team-intro > p { max-width: 23rem; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.7; }
-.service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: minmax(280px, auto); gap: .85rem; }
-.service-card:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 3; }
-.service-card:nth-child(2) { grid-column: 3 / 5; }
-.service-card:nth-child(1) h3 { max-width: 26rem; font-size: clamp(1.6rem, 2.8vw, 2.4rem); }
-.service-card:nth-child(2) h3 { font-size: clamp(1.3rem, 1.9vw, 1.7rem); }
-.service-card { position: relative; min-height: 340px; padding: 1.2rem; display: flex; flex-direction: column; justify-content: end; overflow: hidden; border: 1px solid var(--line); border-radius: .7rem; background: var(--surface); isolation: isolate; }
+.service-grid { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(300px, auto); gap: .85rem; }
+.service-card:nth-child(n) { grid-column: auto; grid-row: auto; border-radius: 1.6rem; }
+.service-card:nth-child(1) { border-radius: 1.6rem; }
+.service-card:nth-child(2) { border-radius: 1.6rem; }
+.service-card:nth-child(3) { border-radius: 1.6rem; }
+.service-card:nth-child(4) { border-radius: 1.6rem; }
+.service-card:nth-child(even) { align-items: flex-end; text-align: right; }
+.service-card:nth-child(even) .service-number { left: auto; right: 1.2rem; }
+.service-card h3 { max-width: 17rem; }
+.service-card:nth-child(n) h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
+.service-card { position: relative; min-height: 300px; padding: 1.6rem 2rem; display: flex; flex-direction: column; justify-content: end; overflow: hidden; border: 1px solid var(--line); background: var(--surface); isolation: isolate; }
+.service-card:nth-child(even) .service-link { flex-direction: row-reverse; width: 100%; }
 .service-card::after { position: absolute; inset: 0; z-index: -1; content: ""; background: linear-gradient(0deg, rgba(4,8,9,.95), rgba(4,8,9,.13) 76%); }
+.service-wheel { position: absolute; top: 50%; left: 50%; z-index: 3; width: clamp(8rem, 14vw, 12rem); aspect-ratio: 1; translate: -50% -50%; display: grid; place-items: center; border-radius: 50%; color: var(--accent); background: radial-gradient(circle, #0b1213 62%, transparent 63%); box-shadow: 0 0 0 .6rem var(--bg, #070d0e); pointer-events: none; filter: drop-shadow(0 0 1.2rem rgba(196,223,201,.25)); }
+.service-wheel svg { width: 100%; height: 100%; rotate: var(--wheel-rot, 0deg); transition: rotate .25s ease-out; }
 .service-card img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; filter: saturate(.7) brightness(.76); transition: transform .65s, filter .45s; }
 .service-card:hover img, .service-card:focus-visible img { transform: scale(1.04); filter: saturate(.9) brightness(.9); }
 .service-number { position: absolute; top: 1.2rem; left: 1.2rem; color: var(--accent); font-size: .65rem; letter-spacing: .14em; }
@@ -186,9 +209,9 @@ h1, h2, h3, p { margin-top: 0; }
 @media (max-width: 900px) {
   .mission-section { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .service-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
-  .service-card:nth-child(1) { grid-column: 1 / 3; grid-row: auto; min-height: 380px; }
-  .service-card:nth-child(2) { grid-column: auto; }
-  .service-card { min-height: 310px; }
+  .service-card:nth-child(n) h3 { font-size: 1.2rem; }
+  .service-card { padding: 1.2rem 1.4rem; border-radius: 1.2rem; }
+  .service-card:nth-child(n) { border-radius: 1.2rem; }
   .contact-section { grid-template-columns: 1fr; }
   .contact-heading, .locations { grid-column: 1; }
   .contact-heading { grid-row: auto; }
@@ -226,9 +249,13 @@ h1, h2, h3, p { margin-top: 0; }
   .services-section, .process-section, .team-section, .contact-section { padding-top: 2rem; }
   .section-topline > span { display: none; }
   .services-intro, .team-intro { align-items: start; flex-direction: column; gap: 1rem; }
+  .services-intro { align-items: center; gap: 0; }
+  .anchor { width: 3.6rem; }
   .service-grid { grid-template-columns: 1fr; }
-  .service-card:nth-child(1) { grid-column: auto; min-height: 320px; }
-  .service-card { min-height: 270px; }
+  .service-wheel { display: none; }
+  .service-card:nth-child(n) { border-radius: 1.2rem; align-items: stretch; text-align: left; min-height: 270px; }
+  .service-card:nth-child(even) .service-number { left: 1.2rem; right: auto; }
+  .service-card:nth-child(even) .service-link { flex-direction: row; }
   .project-banner { min-height: 100px; padding: 1.1rem 1.2rem; }
   .project-banner strong { font-size: 1.35rem; }
   .project-arrow { width: 4rem; height: 4rem; }

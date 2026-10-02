@@ -56,6 +56,8 @@ const updateScroll = () => {
     fill.style.transform = `scale${window.innerWidth <= 680 ? 'Y' : 'X'}(${progress})`;
     processSteps.forEach((step, index) => step.classList.toggle('is-active', progress >= index / processSteps.length));
   }
+  const wheel = document.querySelector('.service-wheel');
+  if (wheel) wheel.style.setProperty('--wheel-rot', `${wheel.getBoundingClientRect().top * .35}deg`);
   scrollFrame = 0;
 };
 window.addEventListener('scroll', () => {
