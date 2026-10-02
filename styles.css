@@ -66,7 +66,7 @@ h1, h2, h3, p { margin-top: 0; }
 .button { min-height: 3rem; width: fit-content; padding: 0 1.2rem; display: inline-flex; align-items: center; gap: 1.5rem; border: 1px solid transparent; border-radius: 999px; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; transition: transform .2s, background .2s, color .2s; }
 .button-light { color: #101615; background: var(--accent); }
 .button:hover { transform: translateY(-2px); }
-.hero-caption { position: absolute; z-index: 1; right: var(--hero-pad); bottom: .55rem; left: var(--hero-pad); display: flex; justify-content: space-between; color: rgba(243, 244, 239, .72); font-size: .62rem; letter-spacing: .16em; text-transform: uppercase; }
+.hero-caption { position: absolute; z-index: 1; right: var(--hero-pad); bottom: .55rem; left: var(--hero-pad); display: flex; justify-content: space-between; color: rgba(243, 244, 239, .72); font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; }
 .partner-strip { position: relative; z-index: 1; min-height: 7rem; padding: 1rem var(--hero-pad); display: flex; align-items: center; background: #000; }
 .partner-marquee { width: 100%; overflow: hidden; }
 .partner-track { width: max-content; display: flex; align-items: center; animation: marquee 48s linear infinite; }
@@ -201,7 +201,7 @@ h1, h2, h3, p { margin-top: 0; }
   .hero-poster, .hero-video { object-position: center; }
   .hero-content { margin: 0 0 7rem; }
   .hero h1 { font-size: clamp(1.6rem, 7.2vw, 2.5rem); }
-  .hero-caption { bottom: .45rem; font-size: .55rem; }
+  .hero-caption { bottom: .45rem; font-size: .7rem; }
   .partner-strip { min-height: 5.5rem; padding: .75rem 1rem; }
   .partner-group { gap: 1.5rem; padding-right: 1.5rem; }
   .partner-logo { width: 6rem; height: 3rem; }

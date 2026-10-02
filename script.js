@@ -30,7 +30,10 @@ document.addEventListener('click', event => {
 const revealItems = [...document.querySelectorAll('[data-reveal]')];
 if ('IntersectionObserver' in window && !reducedMotion) {
   const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => entry.target.classList.toggle('is-visible', entry.isIntersecting));
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      else if (entry.boundingClientRect.top > 0) entry.target.classList.remove('is-visible');
+    });
   },  { threshold: .08, rootMargin: '0px 0px -30px 0px' });
   revealItems.forEach(item => revealObserver.observe(item));
 } else {
