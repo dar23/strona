@@ -29,16 +29,9 @@ document.addEventListener('click', event => {
 
 const revealItems = [...document.querySelectorAll('[data-reveal]')];
 if ('IntersectionObserver' in window && !reducedMotion) {
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.target.closest('.mission-section, .service-grid')) {
-        entry.target.classList.toggle('is-visible', entry.isIntersecting);
-      } else if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => entry.target.classList.toggle('is-visible', entry.isIntersecting));
+  },  { threshold: .08, rootMargin: '0px 0px -30px 0px' });
   revealItems.forEach(item => revealObserver.observe(item));
 } else {
   revealItems.forEach(item => item.classList.add('is-visible'));
@@ -46,25 +39,6 @@ if ('IntersectionObserver' in window && !reducedMotion) {
 
 const process = document.querySelector('[data-process]');
 const processSteps = [...document.querySelectorAll('[data-process-step]')];
-const setBoatToStep = step => {
-  const index = processSteps.indexOf(step);
-  if (index >= 0) process.style.setProperty('--boat-progress', String(index / Math.max(1, processSteps.length - 1)));
-};
-process?.addEventListener('pointerover', event => {
-  if (!(event.target instanceof Element)) return;
-  const step = event.target.closest('[data-process-step]');
-  if (step) setBoatToStep(step);
-});
-process?.addEventListener('pointerleave', () => process.style.removeProperty('--boat-progress'));
-process?.addEventListener('focusin', event => {
-  if (!(event.target instanceof Element)) return;
-  const step = event.target.closest('[data-process-step]');
-  if (step) setBoatToStep(step);
-});
-process?.addEventListener('focusout', event => {
-  if (event.relatedTarget instanceof Element && process.contains(event.relatedTarget)) return;
-  process.style.removeProperty('--boat-progress');
-});
 let scrollFrame = 0;
 const updateScroll = () => {
   siteHeader?.classList.toggle('is-scrolled', window.scrollY > 40);
