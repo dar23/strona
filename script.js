@@ -56,10 +56,18 @@ const updateScroll = () => {
     fill.style.transform = `scale${window.innerWidth <= 680 ? 'Y' : 'X'}(${progress})`;
     processSteps.forEach((step, index) => step.classList.toggle('is-active', progress >= index / processSteps.length));
   }
-  const wheel = document.querySelector('.service-wheel');
-  if (wheel) wheel.style.setProperty('--wheel-rot', `${wheel.getBoundingClientRect().top * .35}deg`);
   scrollFrame = 0;
 };
+const wheel = document.querySelector('.service-wheel');
+const wheelAngles = [-50, 50, -110, 110];
+document.querySelectorAll('.service-card').forEach((card, index) => {
+  const turn = () => wheel?.style.setProperty('--wheel-rot', `${wheelAngles[index] ?? 0}deg`);
+  const reset = () => wheel?.style.setProperty('--wheel-rot', '0deg');
+  card.addEventListener('pointerenter', turn);
+  card.addEventListener('pointerleave', reset);
+  card.addEventListener('focus', turn);
+  card.addEventListener('blur', reset);
+});
 window.addEventListener('scroll', () => {
   if (scrollFrame) return;
   scrollFrame = requestAnimationFrame(updateScroll);

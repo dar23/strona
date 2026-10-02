@@ -119,19 +119,31 @@
           <span class="service-number">04</span><h3>Architektoniczne systemy cięgnowe</h3><span class="service-link">Technologia w architekturze <b aria-hidden="true">↗</b></span>
         </a>
         <div class="service-wheel" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <defs>
+              <g id="wheel-spoke">
+                <path d="M-4.2 -20L-3.4 -62H3.4L4.2 -20Z" fill="#0b1213" stroke-width="1.6" />
+                <path d="M-5 -65h10v4h-10Z" fill="#0b1213" stroke-width="1.4" />
+                <path d="M-3 -66L-2.4 -77Q-4.6 -79 -4.4 -83Q-3.6 -87 0 -87Q3.6 -87 4.4 -83Q4.6 -79 2.4 -77L3 -66Z" fill="currentColor" fill-opacity=".85" stroke-width="1" />
+              </g>
+            </defs>
             <g class="wheel-spin">
-              <circle cx="60" cy="60" r="34" stroke-width="5" />
-              <circle cx="60" cy="60" r="43" stroke-width=".8" />
-              <g id="wheel-spokes">
-                <path d="M60 8v104M8 60h104M23 23l74 74M97 23l-74 74" stroke-width="3" />
-              </g>
-              <g fill="currentColor" stroke="none">
-                <circle cx="60" cy="8" r="4.5" /><circle cx="60" cy="112" r="4.5" /><circle cx="8" cy="60" r="4.5" /><circle cx="112" cy="60" r="4.5" />
-                <circle cx="23" cy="23" r="4.5" /><circle cx="97" cy="23" r="4.5" /><circle cx="23" cy="97" r="4.5" /><circle cx="97" cy="97" r="4.5" />
-              </g>
-              <circle cx="60" cy="60" r="9" fill="#0b1213" stroke-width="3" />
-              <circle cx="60" cy="60" r="2.5" fill="currentColor" stroke="none" />
+              <path fill-rule="evenodd" fill="#0b1213" stroke-width="2" d="M100 33a67 67 0 1 0 .01 0ZM100 52a48 48 0 1 1-.01 0Z" />
+              <circle cx="100" cy="100" r="60" stroke-width="1" />
+              <circle cx="100" cy="100" r="55" stroke-width=".6" />
+              <use href="#wheel-spoke" transform="translate(100 100)" />
+              <use href="#wheel-spoke" transform="translate(100 100) rotate(45)" />
+              <use href="#wheel-spoke" transform="translate(100 100) rotate(90)" />
+              <use href="#wheel-spoke" transform="translate(100 100) rotate(135)" />
+              <use href="#wheel-spoke" transform="translate(100 100) rotate(180)" />
+              <use href="#wheel-spoke" transform="translate(100 100) rotate(225)" />
+              <use href="#wheel-spoke" transform="translate(100 100) rotate(270)" />
+              <use href="#wheel-spoke" transform="translate(100 100) rotate(315)" />
+              <circle cx="100" cy="100" r="25" fill="#0b1213" stroke-width="3.2" />
+              <circle cx="100" cy="100" r="20" stroke-width="1" />
+              <circle cx="100" cy="100" r="13" fill="currentColor" fill-opacity=".25" stroke-width="2" />
+              <circle cx="100" cy="100" r="6" fill="#0b1213" stroke-width="1.6" />
+              <circle cx="100" cy="100" r="2" fill="currentColor" stroke="none" />
             </g>
           </svg>
         </div>
