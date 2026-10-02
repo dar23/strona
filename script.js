@@ -67,13 +67,11 @@ updateScroll();
 
 const videos = [...document.querySelectorAll('.hero-video')];
 const shots = [
-  { src: 'media/veliero-01.mp4', start: 0 },
-  { src: 'media/veliero-02.mp4', start: 1 },
-  { src: 'media/veliero-01.mp4', start: 4 },
-  { src: 'media/veliero-02.mp4', start: 7 },
-  { src: 'media/veliero-01.mp4', start: 8 },
-  { src: 'media/veliero-02.mp4', start: 13 }
+  { src: 'media/sailing-01.mp4', poster: 'media/sailing-01.jpg', start: 0 },
+  { src: 'media/sailing-02.mp4', poster: 'media/sailing-02.jpg', start: 0 },
+  { src: 'media/sailing-03.mp4', poster: 'media/sailing-03.jpg', start: 0 }
 ];
+const heroPoster = document.querySelector('.hero-poster');
 let shotIndex = 0;
 let activeVideo = 0;
 let shotTimer;
@@ -87,6 +85,8 @@ const showShot = (index, initial = false) => {
   const shot = shots[index];
   nextVideo.pause();
   nextVideo.classList.remove('is-active');
+  nextVideo.poster = shot.poster;
+  if (heroPoster) heroPoster.src = shot.poster;
   const sourceChanged = nextVideo.getAttribute('src') !== shot.src;
   if (sourceChanged) nextVideo.src = shot.src;
   nextVideo.onloadedmetadata = () => {
@@ -114,4 +114,12 @@ const showShot = (index, initial = false) => {
   }
 };
 
-if (!reducedMotion && videos.length === 2) showShot(0, true);
+if (reducedMotion) {
+  videos.forEach(video => {
+    video.autoplay = false;
+    video.pause();
+    video.classList.remove('is-active');
+  });
+} else if (videos.length === 2) {
+  showShot(0, true);
+}
