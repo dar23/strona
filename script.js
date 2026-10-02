@@ -46,6 +46,25 @@ if ('IntersectionObserver' in window && !reducedMotion) {
 
 const process = document.querySelector('[data-process]');
 const processSteps = [...document.querySelectorAll('[data-process-step]')];
+const setBoatToStep = step => {
+  const index = processSteps.indexOf(step);
+  if (index >= 0) process.style.setProperty('--boat-progress', String(index / Math.max(1, processSteps.length - 1)));
+};
+process?.addEventListener('pointerover', event => {
+  if (!(event.target instanceof Element)) return;
+  const step = event.target.closest('[data-process-step]');
+  if (step) setBoatToStep(step);
+});
+process?.addEventListener('pointerleave', () => process.style.removeProperty('--boat-progress'));
+process?.addEventListener('focusin', event => {
+  if (!(event.target instanceof Element)) return;
+  const step = event.target.closest('[data-process-step]');
+  if (step) setBoatToStep(step);
+});
+process?.addEventListener('focusout', event => {
+  if (event.relatedTarget instanceof Element && process.contains(event.relatedTarget)) return;
+  process.style.removeProperty('--boat-progress');
+});
 let scrollFrame = 0;
 const updateScroll = () => {
   siteHeader?.classList.toggle('is-scrolled', window.scrollY > 40);
@@ -56,6 +75,7 @@ const updateScroll = () => {
     const range = Math.max(1, rect.height - window.innerHeight * .35);
     const progress = Math.max(0, Math.min(1, (window.innerHeight * .65 - rect.top) / range));
     const fill = process.querySelector('.process-rail span');
+    process.style.setProperty('--process-progress', progress);
     fill.style.transform = `scale${window.innerWidth <= 680 ? 'Y' : 'X'}(${progress})`;
     processSteps.forEach((step, index) => step.classList.toggle('is-active', progress >= index / processSteps.length));
   }
