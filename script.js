@@ -2,18 +2,9 @@ document.documentElement.classList.add('js-enabled');
 
 const menuButton = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
-const menuClose = mobileMenu ? document.createElement('button') : null;
 const progressBar = document.querySelector('.scroll-progress span');
 const siteHeader = document.querySelector('.site-header');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (mobileMenu && menuClose) {
-  menuClose.type = 'button';
-  menuClose.className = 'menu-close';
-  menuClose.setAttribute('aria-label', 'Zamknij menu');
-  menuClose.innerHTML = '<span></span><span></span>';
-  mobileMenu.append(menuClose);
-}
 
 const setMenu = open => {
   if (!menuButton || !mobileMenu) return;
@@ -25,10 +16,6 @@ const setMenu = open => {
 };
 
 menuButton?.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
-menuClose?.addEventListener('click', () => {
-  setMenu(false);
-  menuButton?.focus();
-});
 mobileMenu?.addEventListener('click', event => {
   if (event.target instanceof HTMLAnchorElement) setMenu(false);
 });
