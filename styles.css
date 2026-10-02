@@ -159,10 +159,17 @@ h1, h2, h3, p { margin-top: 0; }
 .js-enabled .mission-section .mission-copy.is-visible .stats div:nth-child(1) { transition-delay: .3s; }
 .js-enabled .mission-section .mission-copy.is-visible .stats div:nth-child(2) { transition-delay: .42s; }
 .js-enabled .mission-section .mission-copy.is-visible .stats div:nth-child(3) { transition-delay: .54s; }
+.js-enabled .service-card[data-reveal] { opacity: 0; transform: translate3d(-1.5rem, 2rem, 0) rotate(-1deg) scale(.97); transition: opacity .65s ease, transform .85s cubic-bezier(.2,.7,.2,1); will-change: opacity, transform; }
+.js-enabled .service-card[data-reveal].is-visible { opacity: 1; transform: translate(0) rotate(0); }
+.js-enabled .service-grid .service-card:nth-child(1) { transition-delay: 0s; }
+.js-enabled .service-grid .service-card:nth-child(2) { transition-delay: .1s; }
+.js-enabled .service-grid .service-card:nth-child(3) { transition-delay: .2s; }
+.js-enabled .service-grid .service-card:nth-child(4) { transition-delay: .3s; }
 @media (prefers-reduced-motion: reduce) {
   .mission-photo img { transform: none; transition: none; }
   .js-enabled .mission-section [data-reveal],
-  .js-enabled .mission-section .stats div { opacity: 1; transform: none; transition: none; }
+  .js-enabled .mission-section .stats div,
+  .js-enabled .service-card[data-reveal] { opacity: 1; transform: none; transition: none; }
 }
 @media (max-width: 900px) {
   .mission-section { grid-template-columns: 1fr 1fr; gap: 1.5rem; }

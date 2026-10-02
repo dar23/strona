@@ -31,7 +31,7 @@ const revealItems = [...document.querySelectorAll('[data-reveal]')];
 if ('IntersectionObserver' in window && !reducedMotion) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-      if (entry.target.closest('.mission-section')) {
+      if (entry.target.closest('.mission-section, .service-grid')) {
         entry.target.classList.toggle('is-visible', entry.isIntersecting);
       } else if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
