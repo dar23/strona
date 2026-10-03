@@ -4,7 +4,6 @@
 
   // Każdy wiersz: [polski (klucz), angielski, hiszpański, niemiecki]
   const rows = [
-    ['Just Rigging — Pasja, doświadczenie, bez kompromisów', 'Just Rigging — Passion, experience, no compromises', 'Just Rigging — Pasión, experiencia, sin compromisos', 'Just Rigging — Leidenschaft, Erfahrung, keine Kompromisse'],
     ['Just Rigging — omasztowanie, takielunek, osprzęt jachtowy i zarządzanie projektami żaglowymi.', 'Just Rigging — masts, rigging, yacht hardware and sailing project management.', 'Just Rigging — mástiles, jarcia, herrajes náuticos y gestión de proyectos de vela.', 'Just Rigging — Masten, Rigg, Yachtbeschläge und Projektmanagement für Segelyachten.'],
     ['Maszty i takielunek — Just Rigging', 'Masts and rigging — Just Rigging', 'Mástiles y jarcia — Just Rigging', 'Masten und Rigg — Just Rigging'],
     ['Okucia i osprzęt — Just Rigging', 'Fittings and hardware — Just Rigging', 'Herrajes y accesorios — Just Rigging', 'Beschläge und Zubehör — Just Rigging'],
@@ -22,10 +21,6 @@
     ['Współpraca', 'Cooperation', 'Colaboración', 'Zusammenarbeit'],
     ['Zespół', 'Team', 'Equipo', 'Team'],
     ['Kontakt', 'Contact', 'Contacto', 'Kontakt'],
-
-    ['PASJA.', 'PASSION.', 'PASIÓN.', 'LEIDENSCHAFT.'],
-    ['DOŚWIADCZENIE.', 'EXPERIENCE.', 'EXPERIENCIA.', 'ERFAHRUNG.'],
-    ['BEZ KOMPROMISÓW.', 'NO COMPROMISES.', 'SIN COMPROMISOS.', 'KEINE KOMPROMISSE.'],
     ['Partnerzy technologiczni', 'Technology partners', 'Socios tecnológicos', 'Technologiepartner'],
     ['Logotypy partnerów', 'Partner logos', 'Logotipos de socios', 'Partnerlogos'],
 
