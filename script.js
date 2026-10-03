@@ -25,12 +25,16 @@ if (!reducedMotion) {
 const setMenu = open => {
   if (!menuButton || !mobileMenu) return;
   menuButton.setAttribute('aria-expanded', String(open));
-  menuButton.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+  const translate = window.jrI18n?.t ?? (text => text);
+  menuButton.setAttribute('aria-label', translate(open ? 'Zamknij menu' : 'Otwórz menu'));
   mobileMenu.classList.toggle('is-open', open);
   mobileMenu.setAttribute('aria-hidden', String(!open));
   document.body.classList.toggle('menu-open', open);
 };
 
+const syncMenuLabel = () => setMenu(menuButton?.getAttribute('aria-expanded') === 'true');
+document.addEventListener('jr:lang', syncMenuLabel);
+syncMenuLabel();
 menuButton?.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
 mobileMenu?.addEventListener('click', event => {
   if (event.target instanceof HTMLAnchorElement) setMenu(false);
@@ -60,7 +64,8 @@ if ('IntersectionObserver' in window && !reducedMotion) {
   const nameObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => teamCards.forEach(card => card.classList.toggle('names-in', entry.isIntersecting)));
   }, { rootMargin: '-48% 0px -48% 0px' });
-  nameObserver.observe(document.querySelector('.team-grid'));
+  const teamGrid = document.querySelector('.team-grid');
+  if (teamGrid) nameObserver.observe(teamGrid);
 } else {
   teamCards.forEach(card => card.classList.add('names-in'));
 }
