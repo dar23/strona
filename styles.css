@@ -201,7 +201,7 @@ h1, h2, h3, .section-title, .project-banner strong { font-family: var(--heading-
 .process-track h3 { margin: .65rem 0 .45rem; font-size: 1.25rem; font-weight: 400; }
 .process-track p { max-width: 14rem; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.6; }
 .team-section { padding-top: 3rem; }
-.team-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .9rem; }
+.team-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 28rem)); justify-content: center; gap: .9rem; }
 .team-card { position: relative; min-height: 245px; padding: 1.3rem; display: flex; flex-direction: column; justify-content: end; overflow: hidden; border: 1px solid var(--line); border-radius: .7rem; background: linear-gradient(145deg, #172020, #0d1314); }
 .team-role { position: absolute; top: 1.2rem; left: 1.3rem; color: var(--accent); font-size: .62rem; letter-spacing: .13em; text-transform: uppercase; }
 .team-card h3 { margin: 0; font-size: 1.75rem; font-weight: 400; letter-spacing: .02em; }
@@ -259,6 +259,7 @@ h1, h2, h3, .section-title, .project-banner strong { font-family: var(--heading-
 @media (max-width: 900px) {
   .mission-section { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .service-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .service-card:nth-child(n) h3 { font-size: 1.2rem; }
   .service-card { padding: 1.2rem 1.4rem; border-radius: 1.2rem; }
   .service-card:nth-child(n) { border-radius: 1.2rem; }
@@ -389,14 +390,11 @@ h1, h2, h3, .section-title, .project-banner strong { font-family: var(--heading-
 
 
 
-.team-lead { min-height: 420px; isolation: isolate; }
-.team-lead img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; filter: saturate(.85); transition: transform .6s; }
+.team-lead { min-height: 0; aspect-ratio: 2 / 3; isolation: isolate; }
+.team-lead img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; filter: saturate(.85); transition: filter .6s; }
 .team-lead::after { position: absolute; inset: 0; z-index: -1; content: ""; background: linear-gradient(0deg, rgba(4,8,9,.92), rgba(4,8,9,0) 60%); }
-.team-lead:hover img { transform: scale(1.04); }
+.team-lead:hover img { filter: saturate(1); }
 .team-lead .team-role { text-shadow: 0 1px 4px rgba(0,0,0,.7); }
-@media (max-width: 680px) { .team-lead { min-height: 380px; } }
-
-
 .js-enabled .team-lead h3 { opacity: 0; transform: translateX(3rem); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
 .js-enabled .team-lead.names-in h3 { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .js-enabled .team-lead h3 { opacity: 1; transform: none; transition: none; } }
