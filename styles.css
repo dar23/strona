@@ -118,7 +118,7 @@ h1, h2, h3, p { margin-top: 0; }
 .service-card:nth-child(even) .service-number { left: auto; right: 1.2rem; }
 .service-card h3 { max-width: 17rem; }
 .service-card:nth-child(n) h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
-.service-card { position: relative; min-height: 300px; padding: 1.6rem 2rem; display: flex; flex-direction: column; justify-content: end; overflow: hidden; border: 1px solid var(--line); background: var(--surface); isolation: isolate; }
+.service-card { position: relative; min-height: clamp(18rem, 27vw, 26rem); padding: 1.6rem 2rem; display: flex; flex-direction: column; justify-content: end; overflow: hidden; border: 1px solid var(--line); background: var(--surface); isolation: isolate; }
 .service-card:nth-child(even) .service-link { flex-direction: row-reverse; width: 100%; }
 .service-card::after { position: absolute; inset: 0; z-index: -1; content: ""; background: linear-gradient(0deg, rgba(4,8,9,.95), rgba(4,8,9,.13) 76%); }
 .service-wheel { position: absolute; top: 50%; left: 50%; z-index: 1; opacity: .3; mix-blend-mode: screen; width: clamp(11rem, 19vw, 16rem); aspect-ratio: 1; translate: -50% -50%; display: grid; place-items: center; color: var(--accent); pointer-events: none; filter: drop-shadow(0 0 1.2rem rgba(196,223,201,.25)); }
