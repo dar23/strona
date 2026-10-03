@@ -140,7 +140,7 @@ h1, h2, h3, p { margin-top: 0; }
 .project-sub span { padding: .5rem 1.1rem; border: 1px solid rgba(196,223,201,.4); border-radius: 999px; background: rgba(8,12,13,.55); backdrop-filter: blur(4px); color: var(--accent); font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; transition: background .25s, color .25s; }
 .project-sub span { cursor: pointer; transition: background .25s, color .25s, translate .25s, scale .25s, box-shadow .25s, border-color .25s; }
 .project-sub span:hover { border-color: var(--accent); background: rgba(196,223,201,.22); color: #fff; box-shadow: 0 0 1.2rem rgba(116,224,200,.5); translate: 0 -3px; scale: 1.06; }
-.project-banner strong { position: relative; z-index: 1; grid-column: 2; grid-row: 1; align-self: end; margin-bottom: 1.3rem; font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.05; letter-spacing: -.035em; text-align: center; }
+.project-banner strong { position: relative; z-index: 1; grid-column: 2; grid-row: 1; align-self: end; margin-bottom: 2.4rem; font-size: clamp(1.5rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.05; letter-spacing: -.035em; text-align: center; }
 .project-arrow { position: absolute; inset: 0 auto 0 0; z-index: -1; width: 50%; display: grid; place-items: center; color: var(--accent); opacity: .28; transition: opacity .4s; pointer-events: none; }
 .project-banner:hover .project-arrow { opacity: .4; }
 .project-arrow .chart { width: 100%; height: 100%; clip-path: inset(0 0 calc((1 - var(--chart-p, 0)) * 100%) 0); }
