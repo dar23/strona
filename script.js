@@ -56,9 +56,15 @@ const updateScroll = () => {
     fill.style.transform = `scale${window.innerWidth <= 680 ? 'Y' : 'X'}(${progress})`;
     processSteps.forEach((step, index) => step.classList.toggle('is-active', progress >= index / processSteps.length));
   }
+  const banner = document.querySelector('.project-banner');
+  if (banner) {
+    const r = banner.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (innerHeight * .95 - r.top) / (innerHeight * .6)));
+    banner.style.setProperty('--chart-p', p.toFixed(3));
+  }
   scrollFrame = 0;
 };
-const wheel = document.querySelector('.service-wheel');
+const wheel =  document.querySelector('.service-wheel');
 const wheelAngles = [-50, 50, -110, 110];
 document.querySelectorAll('.service-card').forEach((card, index) => {
   const turn = () => wheel?.style.setProperty('--wheel-rot', `${wheelAngles[index] ?? 0}deg`);
