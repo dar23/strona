@@ -96,7 +96,7 @@ h1, h2, h3, p { margin-top: 0; }
 .services-intro h2 { text-align: center; }
 .anchor-drop { display: flex; flex-direction: column; align-items: center; margin: 1rem 0 1.2rem; color: var(--accent); }
 .anchor-rope { width: 10px; height: 5.5rem; background: radial-gradient(ellipse 4px 6px at 50% 50%, transparent 3px, var(--accent) 3.5px, transparent 4.5px) 0 0/10px 16px repeat-y; opacity:.85; transform: scaleY(0); transform-origin: top; transition: transform .9s cubic-bezier(.2,.7,.2,1); }
-.anchor { width: 4.6rem; height: auto; opacity: 0; transform: translateY(-2.6rem); transform-origin: 50% 0; transition: transform 1s cubic-bezier(.3,1.35,.5,1) .15s, opacity .4s ease .15s; }
+.anchor { width: 7rem; height: auto; opacity: 0; transform: translateY(-2.6rem); transform-origin: 50% 0; transition: transform 1s cubic-bezier(.3,1.35,.5,1) .15s, opacity .4s ease .15s; }
 .services-intro.is-visible .anchor-rope { transform: scaleY(1); }
 .services-intro.is-visible .anchor { opacity: 1; transform: none; animation: anchor-sway 4s ease-in-out 1.3s infinite; }
 @keyframes anchor-sway { 0%, 100% { rotate: -3deg; } 50% { rotate: 3deg; } }
@@ -139,7 +139,7 @@ h1, h2, h3, p { margin-top: 0; }
 .project-banner strong { position: relative; z-index: 1; order: 2; font-size: clamp(1.7rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.05; letter-spacing: -.035em; }
 .project-arrow { position: absolute; inset: 0; z-index: -1; width: auto; display: grid; place-items: center; color: var(--accent); opacity: .28; transition: opacity .4s; pointer-events: none; }
 .project-banner:hover .project-arrow { opacity: .4; }
-.project-arrow .chart { width: 100%; height: 100%; }
+.project-arrow .chart { width: 100%; height: 100%; clip-path: inset(0 0 calc((1 - var(--chart-p, 0)) * 100%) 0); }
 .chart-route { stroke-dasharray: 1; stroke-dashoffset: calc(1 - var(--chart-p, 0)); }
 
 .compass { width: 100%; height: 100%; overflow: visible; }
@@ -151,9 +151,9 @@ h1, h2, h3, p { margin-top: 0; }
 .process-track { position: relative; }
 .process-rail { position: absolute; top: .95rem; right: 4%; left: 4%; height: 1px; background: rgba(255,255,255,.14); }
 .process-rail span { display: block; width: 100%; height: 100%; transform: scaleX(0); transform-origin: left; background: var(--accent); }
-.process-boat { position: absolute; z-index: 1; bottom: 3px; left: calc(3% + var(--process-progress, 0) * 94%); width: 5rem; height: auto; overflow: visible; transform: translateX(-50%); filter: drop-shadow(0 2px 5px rgba(0,0,0,.35)); transition: left 1.6s cubic-bezier(.2,.7,.2,1); }
-.process-boat path:first-child { transform-box: fill-box; transform-origin: center; animation: boat-rock 3s ease-in-out infinite; }
-@keyframes boat-rock { 0%, 100% { transform: rotate(-1.5deg) translateY(0); } 50% { transform: rotate(1.5deg) translateY(-1px); } }
+.process-boat { position: absolute; z-index: 1; bottom: -4px; left: calc(3% + var(--process-progress, 0) * 94%); width: 5rem; height: auto; overflow: visible; transform: translateX(-50%); filter: drop-shadow(0 2px 5px rgba(0,0,0,.35)); transition: left 1.6s cubic-bezier(.2,.7,.2,1); }
+.process-boat path { transform-box: view-box; transform-origin: 32px 42px; animation: boat-rock 3.6s ease-in-out infinite; }
+@keyframes boat-rock { 0%, 100% { transform: rotate(-3deg) translateY(0); } 50% { transform: rotate(3deg) translateY(-1.5px); } }
 .process-track ol { margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 1.2rem; list-style: none; }
 .process-track li { position: relative; padding-top: 2rem; opacity: .52; transition: opacity .25s; }
 .process-track li::before { position: absolute; top: .6rem; left: 0; width: .7rem; height: .7rem; border: 1px solid var(--accent); border-radius: 50%; background: var(--bg); content: ""; }
@@ -212,7 +212,7 @@ h1, h2, h3, p { margin-top: 0; }
   .js-enabled .mission-section [data-reveal],
   .js-enabled .service-card[data-reveal] { opacity: 1; transform: none; transition: none; }
   .process-boat,
-  .process-boat path:first-child { transition: none; animation: none; }
+  .process-boat path { transition: none; animation: none; }
 }
 @media (max-width: 900px) {
   .mission-section { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
@@ -258,7 +258,7 @@ h1, h2, h3, p { margin-top: 0; }
   .section-topline > span { display: none; }
   .services-intro, .team-intro { align-items: start; flex-direction: column; gap: 1rem; }
   .services-intro { align-items: center; gap: 0; }
-  .anchor { width: 3.6rem; }
+  .anchor { width: 5rem; }
   .service-grid { grid-template-columns: 1fr; }
   .service-wheel { display: none; }
   .service-card:nth-child(n) { border-radius: 1.2rem; align-items: stretch; text-align: left; min-height: 270px; }

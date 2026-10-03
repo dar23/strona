@@ -59,7 +59,7 @@ const updateScroll = () => {
   const banner = document.querySelector('.project-banner');
   if (banner) {
     const r = banner.getBoundingClientRect();
-    const p = Math.min(1, Math.max(0, (innerHeight * .95 - r.top) / (innerHeight * .6)));
+    const p = Math.min(1, Math.max(0, (innerHeight * .95 - r.top) / (innerHeight * .3)));
     banner.style.setProperty('--chart-p', p.toFixed(3));
   }
   scrollFrame = 0;
