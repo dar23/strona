@@ -230,8 +230,8 @@ h1, h2, h3, p { margin-top: 0; }
   :root { --gutter: .6rem; --hero-pad: 1.25rem; }
   .site-header { inset: 0 0 auto; margin: 0; padding: 0; }
   .nav-shell { height: 72px; padding: 0 1.1rem; }
-  .mobile-menu { top: 88px; right: 50%; width: min(25rem, calc(100vw - 2.5rem)); height: min(28rem, calc(100svh - 7rem)); transform: translate(50%, -.4rem); }
-  .mobile-menu.is-open { transform: translate(50%, 0); }
+  .mobile-menu { top: 0; right: 0; left: 0; width: 100vw; max-width: none; height: 100vh; border: 1px solid var(--line); border-radius: 0; box-shadow: none; transform: translateY(-.4rem); }
+  .mobile-menu.is-open { transform: translateY(0); }
   .brand { width: 9rem; }
   .nav-links { display: none; }
   .menu-toggle { width: 2.9rem; height: 2.9rem; padding: .76rem; }
