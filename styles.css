@@ -147,6 +147,7 @@ h1, h2, h3, .section-title { font-family: var(--heading-font); font-weight: 400;
 .service-card:nth-child(2) { border-radius: 1.6rem; }
 .service-card:nth-child(3) { border-radius: 1.6rem; }
 .service-card:nth-child(4) { border-radius: 1.6rem; }
+.service-card:nth-child(5) { grid-column: 1 / -1; min-height: clamp(15rem, 21vw, 20rem); }
 .service-card:nth-child(even) { align-items: flex-end; text-align: right; }
 .service-card:nth-child(even) .service-number { left: auto; right: 1.2rem; }
 .service-card h3 { max-width: 17rem; }
@@ -161,12 +162,14 @@ h1, h2, h3, .section-title { font-family: var(--heading-font); font-weight: 400;
 .service-wheel svg { width: 100%; height: 100%; rotate: var(--wheel-rot, 0deg); transition: rotate .9s cubic-bezier(.3,1.3,.5,1); }
 .service-card img { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; filter: saturate(.7) brightness(.76); transition: transform .65s, filter .45s; }
 .service-card:hover img, .service-card:focus-visible img { transform: scale(1.04); filter: saturate(.9) brightness(.9); }
+.service-card-wide .service-symbol { position: absolute; inset: 0; display: grid; place-items: center; color: var(--accent); pointer-events: none; }
+.service-card-wide .service-symbol svg { width: clamp(10rem, 20vw, 17rem); height: auto; overflow: visible; filter: drop-shadow(0 0 1.3rem rgba(196,223,201,.2)); transition: transform .45s ease; }
+.service-card-wide:hover .service-symbol svg, .service-card-wide:focus-visible .service-symbol svg { transform: translateY(-.35rem) scale(1.04); }
+.service-card-wide .service-number, .service-card-wide h3, .service-card-wide .service-link { position: relative; z-index: 1; }
 .service-number { position: absolute; top: 1.2rem; left: 1.2rem; color: var(--accent); font-size: .65rem; letter-spacing: .14em; }
 .service-card h3 { max-width: 17rem; margin: 0 0 .65rem; font-size: clamp(1.25rem, 1.7vw, 1.6rem); line-height: 1.1; letter-spacing: .02em; }
 .service-link { min-height: 2.1rem; padding-top: .7rem; display: flex; align-items: center; justify-content: space-between; gap: .7rem; border-top: 1px solid rgba(243,244,239,.2); color: rgba(243,244,239,.76); font-size: .72rem; line-height: 1.4; letter-spacing: .055em; text-transform: uppercase; }
 .service-link b { display: none; }
-.compass { width: 100%; height: 100%; overflow: visible; }
-.compass-needle { transform-origin: 50px 50px; transform: rotate(35deg); transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
 .process-section { padding-top: 3rem; }
 .process-section > .section-title { margin: 2.5rem 0 4.5rem; }
 .process-track { position: relative; }
@@ -378,9 +381,6 @@ h1, h2, h3, .section-title { font-family: var(--heading-font); font-weight: 400;
 
 
 
-.chart-vessel { transition: filter .3s ease; }
-.project-arrow:hover .chart-vessel, .project-banner:hover .chart-vessel { animation: project-boat-hover 5s linear infinite; filter: none; }
-@keyframes project-boat-hover { 0%, 100% { transform: translate(0, 0) rotate(5deg); } 12.5% { transform: translate(3px, -4px) rotate(3.5deg); } 25% { transform: translate(4px, -6px) rotate(0deg); } 37.5% { transform: translate(3px, -4px) rotate(-3.5deg); } 50% { transform: translate(0, 0) rotate(-5deg); } 62.5% { transform: translate(-3px, 4px) rotate(-3.5deg); } 75% { transform: translate(-4px, 6px) rotate(0deg); } 87.5% { transform: translate(-3px, 4px) rotate(3.5deg); } }
 .lang-switch { margin-top: .4rem; padding: .8rem 0 0; display: flex; justify-content: center; gap: .5rem; border-top: 1px solid var(--line); opacity: 0; transform: translateY(.5rem); transition: opacity .32s ease .45s, transform .5s cubic-bezier(.2,.9,.25,1) .45s; }
 .mobile-menu.is-open .lang-switch { opacity: 1; transform: none; }
 .lang-switch button { min-width: 3rem; min-height: 2.4rem; padding: 0 .7rem; border: 1px solid rgba(240,246,241,.2); border-radius: .6rem; background: transparent; color: var(--muted); font-family: inherit; font-size: .78rem; font-weight: 700; line-height: 1; letter-spacing: .14em; cursor: pointer; transition: color .2s, border-color .2s, background .2s, transform .2s; }
