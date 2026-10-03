@@ -321,7 +321,7 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 .section-topline { position: relative; }
-.gulls { position: absolute; inset: -8rem 0 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.gulls { position: absolute; inset: -8rem 0 0; z-index: 0; overflow-x: clip; overflow-y: visible; pointer-events: none; }
 .gull { position: absolute; top: var(--top); left: 0; width: calc(5.5rem * var(--s)); color: rgba(240,246,244,.8); animation: gull-fly var(--dur) linear var(--delay) infinite; }
 .gull svg { display: block; width: 100%; fill: currentColor; animation: gull-bob 3.2s ease-in-out infinite; }
 .gull-wing { transform-origin: 38px 22px; animation: gull-flap var(--flap, 1.3s) ease-in-out var(--flap-delay, 0s) infinite; }
@@ -330,7 +330,7 @@ h1, h2, h3, p { margin-top: 0; }
 @keyframes gull-fly { from { transform: translateX(-15vw); } to { transform: translateX(115vw); } }
 @keyframes gull-bob { 50% { transform: translateY(-.5rem); } }
 @keyframes gull-flap { 0%, 100% { transform: scaleY(1) skewY(0); } 50% { transform: scaleY(-.7) skewY(4deg); } }
-@media (max-width: 680px) { .gull { opacity: .7; } .gull:nth-child(n+2) { display: none; } }
+@media (max-width: 680px) { .gull { opacity: .7; } .gull:nth-child(n+3) { display: none; } }
 @media (prefers-reduced-motion: reduce) { .gulls { display: none; } }
 
 
@@ -354,5 +354,6 @@ h1, h2, h3, p { margin-top: 0; }
 .js-enabled .team-lead h3 { opacity: 0; transform: translateX(3rem); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
 .js-enabled .team-lead.names-in h3 { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .js-enabled .team-lead h3 { opacity: 1; transform: none; transition: none; } }
+
 
 
