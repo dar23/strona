@@ -6,6 +6,22 @@ const progressBar = document.querySelector('.scroll-progress span');
 const siteHeader = document.querySelector('.site-header');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+if (!reducedMotion) {
+  const sky = document.createElement('div');
+  sky.className = 'gulls';
+  sky.setAttribute('aria-hidden', 'true');
+  const gull = '<svg viewBox="0 0 80 40" focusable="false"><path class="gull-wing" d="M37 21C32 13 22 7 10 7C5 7 2 9 1 11C10 10 18 13 25 18C30 22 34 25 38 25Z"/><path class="gull-wing gull-wing-far" d="M41 21C46 13 56 7 68 7C73 7 76 9 77 11C68 10 60 13 53 18C48 22 44 25 40 25Z"/><path class="gull-body" d="M30 24C34 20 42 19 50 19.5C53 19 56 19.8 58 21L66 21.8L58 23C54 25.5 46 26.5 40 26C36 26 33 25.5 30 24Z"/></svg>';
+  [['30%', 42, 0, .8, 1.0, 0], ['55%', 36, 18, .6, 1.7, .5], ['calc(100% + 1rem)', 48, 9, .65, 1.4, .3]].forEach(([top, dur, delay, scale, flap, flapDelay]) => {
+    const g = document.createElement('span');
+    g.className = 'gull';
+    g.style.cssText = `--top:${top};--dur:${dur}s;--delay:-${delay}s;--s:${scale};--flap:${flap}s;--flap-delay:-${flapDelay}s`;
+    g.innerHTML = gull;
+    sky.appendChild(g);
+  });
+  const area = document.querySelector('.services-section .section-topline');
+  if (area) area.prepend(sky);
+}
+
 const setMenu = open => {
   if (!menuButton || !mobileMenu) return;
   menuButton.setAttribute('aria-expanded', String(open));
@@ -38,6 +54,15 @@ if ('IntersectionObserver' in window && !reducedMotion) {
   revealItems.forEach(item => revealObserver.observe(item));
 } else {
   revealItems.forEach(item => item.classList.add('is-visible'));
+}
+const teamCards = [...document.querySelectorAll('.team-lead')];
+if ('IntersectionObserver' in window && !reducedMotion) {
+  const nameObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => teamCards.forEach(card => card.classList.toggle('names-in', entry.isIntersecting)));
+  }, { rootMargin: '-48% 0px -48% 0px' });
+  nameObserver.observe(document.querySelector('.team-grid'));
+} else {
+  teamCards.forEach(card => card.classList.add('names-in'));
 }
 
 const process = document.querySelector('[data-process]');
@@ -139,3 +164,10 @@ if (reducedMotion) {
 } else if (videos.length === 2) {
   showShot(0, true);
 }
+
+
+
+
+
+
+
