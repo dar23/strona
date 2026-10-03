@@ -65,7 +65,7 @@ button { font: inherit; }
 .mobile-menu.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: none; clip-path: inset(0 0 0 0 round .7rem); }
 .mobile-menu::before { position: absolute; inset: 0 0 auto; height: 1px; content: ""; background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); opacity: 0; transition: opacity .4s ease .12s; }
 .mobile-menu.is-open::before { opacity: 1; }
-.mobile-menu a { position: relative; padding: .55rem 1rem .55rem 1.4rem; border-radius: .7rem; font-family: var(--heading-font); font-size: 1.3rem; font-weight: 400; letter-spacing: .05em; text-transform: uppercase; opacity: 0; transform: translateX(-1.1rem); transition: opacity .32s ease, transform .5s cubic-bezier(.2,.9,.25,1), color .2s ease, background .2s ease; }
+.mobile-menu a { position: relative; padding: .55rem 1rem .55rem 1.4rem; border-radius: .7rem; font-family: var(--heading-font); font-size: 1.45rem; font-weight: 400; letter-spacing: .05em; text-transform: uppercase; opacity: 0; transform: translateX(-1.1rem); transition: opacity .32s ease, transform .5s cubic-bezier(.2,.9,.25,1), color .2s ease, background .2s ease; }
 .mobile-menu a::before { position: absolute; top: 50%; left: .5rem; width: 2px; height: 0; content: ""; border-radius: 2px; background: linear-gradient(180deg, #fff, var(--accent)); transform: translateY(-50%); transition: height .28s cubic-bezier(.2,.9,.25,1); }
 .mobile-menu.is-open a { opacity: 1; transform: none; }
 .mobile-menu.is-open a:nth-child(1) { transition-delay: .1s; }
