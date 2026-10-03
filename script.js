@@ -68,7 +68,6 @@ if ('IntersectionObserver' in window && !reducedMotion) {
 const process = document.querySelector('[data-process]');
 const processSteps = [...document.querySelectorAll('[data-process-step]')];
 let scrollFrame = 0;
-const heroSection = document.querySelector('.hero');
 const updateScroll = () => {
   siteHeader?.classList.toggle('is-scrolled', window.scrollY > 40);
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -83,10 +82,6 @@ const updateScroll = () => {
     processSteps.forEach((step, index) => step.classList.toggle('is-active', progress >= index / processSteps.length));
   }
   const banner = document.querySelector('.project-banner');
-  if (heroSection && !reducedMotion) {
-    const heroP = Math.min(1, Math.max(0, window.scrollY / heroSection.offsetHeight));
-    heroSection.style.setProperty('--hero-p', heroP.toFixed(3));
-  }
   if (banner) {
     const r = banner.getBoundingClientRect();
     const p = Math.min(1, Math.max(0, (innerHeight * .95 - r.top) / (innerHeight * .3)));
@@ -176,33 +171,3 @@ if (reducedMotion) {
 
 
 
-
-const anatomy = document.querySelector('[data-anatomy]');
-if (anatomy) {
-  const parts = {
-    mast: ['01', 'Maszty i takielunek', 'Aluminium, węgiel i drewno. Maszty oraz takielunek dobrane do jachtu i sposobu żeglowania.', 'maszty-i-takielunek.html'],
-    fittings: ['02', 'Okucia i osprzęt', 'Bezpieczeństwo w każdym detalu: okucia, windy i osprzęt, który wytrzymuje obciążenia na wodzie.', 'okucia-i-osprzet.html'],
-    hull: ['03', 'Custom design', 'Projekt od podstaw: rozwiązania szyte na miarę konkretnego jachtu.', 'custom-design.html'],
-    rigging: ['04', 'Architektoniczne systemy cięgnowe', 'Technologia takielunku przeniesiona do architektury.', 'systemy-ciegowe.html']
-  };
-  const panel = anatomy.querySelector('.anatomy-panel');
-  const spots = [...anatomy.querySelectorAll('.hotspot')];
-  const select = key => {
-    if (anatomy.dataset.active === key && panel.dataset.ready) return;
-    const [num, title, text, href] = parts[key];
-    anatomy.dataset.active = key;
-    panel.dataset.ready = '1';
-    anatomy.querySelector('[data-anatomy-num]').textContent = num;
-    anatomy.querySelector('[data-anatomy-title]').textContent = title;
-    anatomy.querySelector('[data-anatomy-text]').textContent = text;
-    anatomy.querySelector('[data-anatomy-link]').href = href;
-    spots.forEach(spot => spot.classList.toggle('is-active', spot.dataset.part === key));
-    panel.classList.remove('is-swapping');
-    void panel.offsetWidth;
-    panel.classList.add('is-swapping');
-  };
-  spots.forEach(spot => {
-    ['pointerenter', 'focus', 'click'].forEach(type => spot.addEventListener(type, () => select(spot.dataset.part)));
-  });
-  spots[0].classList.add('is-active');
-}

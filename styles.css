@@ -57,19 +57,6 @@ body.menu-open::before { opacity: 1; pointer-events: auto; }
 .hero-video.is-active { opacity: 1; }
 .hero-shade { background: linear-gradient(90deg, rgba(3, 8, 10, .83), rgba(3, 8, 10, .24) 68%), linear-gradient(0deg, rgba(3, 8, 10, .91), transparent 65%); }
 .hero-content { position: relative; z-index: 1; width: min(100%, 900px); margin: 0 0 5rem; }
-.js-enabled .hero-media { transform: translateY(calc(var(--hero-p, 0) * 12%)) scale(calc(1.08 + var(--hero-p, 0) * .06)); will-change: transform; }
-.js-enabled .hero-content { transform: translateY(calc(var(--hero-p, 0) * -4rem)); opacity: calc(1 - var(--hero-p, 0) * 1.4); }
-.js-enabled .hero-content > * { animation: hero-rise .9s cubic-bezier(.2,.8,.2,1) both; }
-.js-enabled .hero-content > :nth-child(1) { animation-delay: .1s; }
-.js-enabled .hero-content > :nth-child(2) { animation-delay: .25s; }
-.js-enabled .hero-content > :nth-child(3) { animation-delay: .4s; }
-.js-enabled .hero-content > :nth-child(4) { animation-delay: .55s; }
-.js-enabled .hero-content > :nth-child(n+5) { animation-delay: .7s; }
-@keyframes hero-rise { from { opacity: 0; transform: translateY(1.6rem); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) {
-  .js-enabled .hero-media, .js-enabled .hero-content { transform: none; opacity: 1; }
-  .js-enabled .hero-content > * { animation: none; }
-}
 .eyebrow { margin: 0 0 1rem; color: var(--accent); font-size: .68rem; font-weight: 700; letter-spacing: .18em; line-height: 1.7; text-transform: uppercase; }
 h1, h2, h3, p { margin-top: 0; }
 .hero-summary, .mission-text, .services-intro > p, .team-intro > p, .process-track p, .team-bio, .team-reserved p, .locations address, .detail-hero > p:not(.eyebrow), .detail-intro p, .detail-panel p, .detail-steps li, .detail-cta p, .site-footer small { font-family: var(--description-font); }
@@ -405,26 +392,3 @@ h1, h2, h3, p { margin-top: 0; }
 .chart-vessel { transition: filter .3s ease; }
 .project-arrow:hover .chart-vessel, .project-banner:hover .chart-vessel { animation: project-boat-hover 5s linear infinite; filter: none; }
 @keyframes project-boat-hover { 0%, 100% { transform: translate(0, 0) rotate(5deg); } 12.5% { transform: translate(3px, -4px) rotate(3.5deg); } 25% { transform: translate(4px, -6px) rotate(0deg); } 37.5% { transform: translate(3px, -4px) rotate(-3.5deg); } 50% { transform: translate(0, 0) rotate(-5deg); } 62.5% { transform: translate(-3px, 4px) rotate(-3.5deg); } 75% { transform: translate(-4px, 6px) rotate(0deg); } 87.5% { transform: translate(-3px, 4px) rotate(3.5deg); } }
-
-.anatomy-section { padding-bottom: 3rem; }
-.anatomy-section > .section-title { margin: 2.5rem 0 3rem; }
-.anatomy { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
-.anatomy-stage { position: relative; aspect-ratio: 600 / 360; color: rgba(196,223,201,.45); }
-.anatomy-stage svg { width: 100%; height: 100%; overflow: visible; }
-.anatomy-stage .sail { fill: rgba(196,223,201,.05); }
-.anatomy-stage .sea { opacity: .5; }
-.anatomy-stage .part { transition: stroke .3s, filter .3s, stroke-width .3s; }
-.anatomy[data-active="mast"] .part-mast, .anatomy[data-active="hull"] .part-hull, .anatomy[data-active="rigging"] .part-rigging, .anatomy[data-active="fittings"] .part-fittings { stroke: var(--accent); filter: drop-shadow(0 0 6px rgba(116,224,200,.8)); }
-.hotspot { position: absolute; width: 2.75rem; height: 2.75rem; padding: 0; display: grid; place-items: center; border: 0; border-radius: 50%; background: none; cursor: pointer; transform: translate(-50%, -50%); }
-.hotspot span { width: .85rem; height: .85rem; border: 2px solid var(--accent); border-radius: 50%; background: #0b1213; transition: transform .25s, background .25s; }
-.hotspot span::after { position: absolute; inset: .55rem; border: 1px solid var(--accent); border-radius: 50%; content: ""; opacity: 0; animation: hotspot-ping 2.2s ease-out infinite; }
-.hotspot:hover span, .hotspot:focus-visible span, .hotspot.is-active span { background: var(--accent); transform: scale(1.35); }
-.hotspot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-@keyframes hotspot-ping { 0% { opacity: .9; transform: scale(.6); } 100% { opacity: 0; transform: scale(2.4); } }
-.anatomy-panel { min-height: 14rem; padding: 1.6rem; border: 1px solid var(--line); border-radius: 1rem; background: rgba(8,12,13,.55); }
-.anatomy-panel h3 { margin: 0 0 .8rem; font-size: clamp(1.4rem, 2.4vw, 1.9rem); letter-spacing: -.03em; }
-.anatomy-panel > p:not(.eyebrow) { margin-bottom: 1.4rem; color: var(--muted); font-family: var(--description-font); line-height: 1.7; }
-.anatomy-panel.is-swapping > * { animation: panel-swap .45s ease both; }
-@keyframes panel-swap { from { opacity: 0; transform: translateY(.6rem); } to { opacity: 1; transform: none; } }
-@media (max-width: 900px) { .anatomy { grid-template-columns: 1fr; } .anatomy-panel { min-height: 0; } }
-@media (prefers-reduced-motion: reduce) { .hotspot span::after, .anatomy-panel.is-swapping > * { animation: none; } }
