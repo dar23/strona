@@ -55,6 +55,15 @@ if ('IntersectionObserver' in window && !reducedMotion) {
 } else {
   revealItems.forEach(item => item.classList.add('is-visible'));
 }
+const teamCards = [...document.querySelectorAll('.team-lead')];
+if ('IntersectionObserver' in window && !reducedMotion) {
+  const nameObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => entry.target.classList.toggle('names-in', entry.isIntersecting));
+  }, { rootMargin: '-48% 0px -48% 0px' });
+  teamCards.forEach(card => nameObserver.observe(card));
+} else {
+  teamCards.forEach(card => card.classList.add('names-in'));
+}
 
 const process = document.querySelector('[data-process]');
 const processSteps = [...document.querySelectorAll('[data-process-step]')];
@@ -155,6 +164,7 @@ if (reducedMotion) {
 } else if (videos.length === 2) {
   showShot(0, true);
 }
+
 
 
 

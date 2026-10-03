@@ -351,6 +351,8 @@ h1, h2, h3, p { margin-top: 0; }
 @media (max-width: 680px) { .team-lead { min-height: 380px; } }
 
 
-.js-enabled .team-lead h3 { opacity: 0; transform: translateX(-3rem); transition: opacity .8s ease .35s, transform .8s cubic-bezier(.2,.7,.2,1) .35s; }
-.js-enabled .team-lead.is-visible h3 { opacity: 1; transform: none; }
+.js-enabled .team-lead h3 { opacity: 0; transform: translateX(3rem); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+.js-enabled .team-lead.names-in h3 { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .js-enabled .team-lead h3 { opacity: 1; transform: none; transition: none; } }
+
+
