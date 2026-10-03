@@ -357,3 +357,9 @@ h1, h2, h3, p { margin-top: 0; }
 
 
 
+
+.chart-vessel { transition: filter .3s ease; }
+.project-arrow:hover .chart-vessel, .project-banner:hover .chart-vessel { animation: project-boat-hover 5s linear infinite; filter: none; }
+@keyframes project-boat-hover { 0%, 100% { transform: translate(0, 0) rotate(5deg); } 12.5% { transform: translate(3px, -4px) rotate(3.5deg); } 25% { transform: translate(4px, -6px) rotate(0deg); } 37.5% { transform: translate(3px, -4px) rotate(-3.5deg); } 50% { transform: translate(0, 0) rotate(-5deg); } 62.5% { transform: translate(-3px, 4px) rotate(-3.5deg); } 75% { transform: translate(-4px, 6px) rotate(0deg); } 87.5% { transform: translate(-3px, 4px) rotate(3.5deg); } }
+
+
