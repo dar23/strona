@@ -17,6 +17,7 @@
     ['Język', 'Language', 'Idioma', 'Sprache'],
     ['Misja', 'Mission', 'Misión', 'Mission'],
     ['Czym się zajmujemy', 'What we do', 'Qué hacemos', 'Was wir tun'],
+    ['Custom design', 'Custom design', 'Diseño a medida', 'Custom Design'],
     ['Oferta', 'Offer', 'Oferta', 'Angebot'],
     ['Współpraca', 'Cooperation', 'Colaboración', 'Zusammenarbeit'],
     ['Zespół', 'Team', 'Equipo', 'Team'],
