@@ -427,11 +427,11 @@ h1, h2, h3, .section-title { font-family: var(--heading-font); font-weight: 400;
 
 
 .lang-switch { display: flex; align-items: center; gap: .2rem; }
-.lang-switch button { min-width: 2.25rem; min-height: 2.4rem; padding: 0 .35rem; border: 1px solid transparent; border-radius: .5rem; background: transparent; color: var(--muted); font-family: inherit; font-size: .75rem; font-weight: 700; line-height: 1; letter-spacing: .08em; cursor: pointer; transition: color .2s, border-color .2s, background .2s, transform .2s; }
-.lang-switch button:hover, .lang-switch button:focus-visible { color: var(--accent); border-color: rgba(196,223,201,.55); transform: translateY(-2px); }
-.lang-switch button[aria-pressed="true"] { color: #101615; border-color: var(--accent); background: var(--accent); }
-.lang-switch button[data-lang="en"], .lang-switch button[data-lang="es"] { color: #fff; }
-.lang-switch button[data-lang="en"][aria-pressed="true"], .lang-switch button[data-lang="es"][aria-pressed="true"] { border-color: var(--accent); background: #263a34; }
+.lang-switch button { min-width: 2.25rem; min-height: 2.4rem; padding: 0 .35rem; border: 1px solid transparent; border-radius: .5rem; background: transparent; color: #fff; font-family: inherit; font-size: .75rem; font-weight: 700; line-height: 1; letter-spacing: .08em; cursor: pointer; transition: color .2s, border-color .2s, background .2s, transform .2s; }
+.lang-switch button:not([aria-pressed="true"]) { opacity: .65; }
+.lang-switch button:hover, .lang-switch button:focus-visible { opacity: 1; }
+.lang-switch button:hover, .lang-switch button:focus-visible { color: #fff; border-color: rgba(196,223,201,.55); transform: translateY(-2px); }
+.lang-switch button[aria-pressed="true"] { color: #fff; border-color: var(--accent); background: var(--accent); }
 @media (prefers-reduced-motion: reduce) { .lang-switch, .lang-switch button { transition: none; transform: none; } }
 .hero h1 { font-size: clamp(2.8rem, 6.2vw, 5.6rem); line-height: .96; letter-spacing: .03em; filter: drop-shadow(0 .15rem 1.2rem rgba(0,0,0,.55)); }
 @supports (-webkit-background-clip: text) or (background-clip: text) {
