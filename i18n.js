@@ -167,7 +167,62 @@
     ['Koordynacja wykonawców, terminów, dostaw i montaży.', 'Coordination of contractors, schedules, deliveries and installations.', 'Coordinación de contratistas, plazos, suministros y montajes.', 'Koordination von Ausführenden, Terminen, Lieferungen und Montagen.'],
     ['03 / Efektywność', '03 / Efficiency', '03 / Eficiencia', '03 / Effizienz'],
     ['Analiza rozwiązań technicznych i ekonomicznych na kolejnych etapach prac.', 'Analysis of technical and economic solutions at successive stages of work.', 'Análisis de soluciones técnicas y económicas en las sucesivas etapas de los trabajos.', 'Analyse technischer und wirtschaftlicher Lösungen in den einzelnen Arbeitsphasen.'],
-    ['Ustalmy zakres i następny krok Twojego projektu.', 'Let’s define the scope and the next step of your project.', 'Definamos el alcance y el siguiente paso de tu proyecto.', 'Legen wir Umfang und nächsten Schritt Ihres Projekts fest.']
+    ['Ustalmy zakres i następny krok Twojego projektu.', 'Let’s define the scope and the next step of your project.', 'Definamos el alcance y el siguiente paso de tu proyecto.', 'Legen wir Umfang und nächsten Schritt Ihres Projekts fest.'],
+
+    ['Od pojedynczego komponentu po pełną opiekę nad projektem. Pięć obszarów, jeden standard wykonania...',
+      'From a single component to full project support. Five areas, one standard of workmanship...',
+      'Desde un solo componente hasta la gestión integral del proyecto. Cinco áreas, un mismo estándar de calidad...',
+      'Von der einzelnen Komponente bis zur umfassenden Projektbetreuung. Fünf Bereiche, ein Qualitätsstandard...'],
+    ['Aluminium · Kompozyty węglowe · Drewno', 'Aluminium · Carbon composites · Wood', 'Aluminio · Composites de carbono · Madera', 'Aluminium · Carbonverbundwerkstoffe · Holz'],
+    ['Just Rigging tworzą pasjonaci, którym żeglarstwo od lat wypełnia znaczną część życia osobistego i zawodowego. To Zespół interdyscyplinarny, szczycący się wieloletnim doświadczeniem zdobywanym na jachtach całego świata. To ludzie nieustająco dążący do perfekcji i zawsze gotowi do udoskonalania swojej pracy. Żeglarze o bogatej praktyce morskiej w zakresie turystycznym i regatowym, otwarci na ambitne przedsięwzięcia i wyzwania z dziedziny żeglarstwa.',
+      'Just Rigging is made up of passionate people for whom sailing has long been a major part of both their personal and professional lives. Our interdisciplinary team brings many years of experience gained aboard yachts around the world. We continually strive for excellence and are always ready to refine our work. With extensive cruising and racing experience, we are open to ambitious sailing projects and challenges.',
+      'Just Rigging reúne a personas apasionadas para quienes la vela lleva años ocupando una parte importante de su vida personal y profesional. Nuestro equipo interdisciplinar aporta una amplia experiencia adquirida a bordo de yates de todo el mundo. Buscamos la excelencia de forma constante y siempre estamos dispuestos a mejorar nuestro trabajo. Con una sólida experiencia en navegación de crucero y regata, afrontamos proyectos y retos náuticos ambiciosos.',
+      'Just Rigging vereint passionierte Seglerinnen und Segler, für die der Segelsport seit Jahren einen großen Teil des beruflichen und privaten Lebens ausmacht. Unser interdisziplinäres Team verfügt über langjährige Erfahrung auf Yachten weltweit. Wir streben kontinuierlich nach höchster Qualität und entwickeln unsere Arbeit stetig weiter. Mit umfangreicher Erfahrung im Fahrten- und Regattasegeln stellen wir uns gerne anspruchsvollen Projekten und Herausforderungen.'],
+    ['Wojtek na pokładzie jachtu żaglowego', 'Wojtek aboard a sailing yacht', 'Wojtek a bordo de un velero', 'Wojtek an Bord einer Segelyacht'],
+    ['Paweł na pokładzie jachtu żaglowego', 'Paweł aboard a sailing yacht', 'Paweł a bordo de un velero', 'Paweł an Bord einer Segelyacht'],
+
+    ['Maszty', 'Masts', 'Mástiles', 'Masten'],
+    ['Precyzja na każdym kursie', 'Precision on every course', 'Precisión en cada rumbo', 'Präzision auf jedem Kurs'],
+    ['Maszty i bomy aluminiowe', 'Aluminium masts and booms', 'Mástiles y botavaras de aluminio', 'Aluminiummasten und -bäume'],
+    ['Maszty i bomy z włókna węglowego', 'Carbon-fibre masts and booms', 'Mástiles y botavaras de fibra de carbono', 'Masten und Bäume aus Carbonfaser'],
+    ['Maszty i bomy drewniane', 'Wooden masts and booms', 'Mástiles y botavaras de madera', 'Holzmasten und -bäume'],
+
+    ['Olinowanie stałe i ruchome', 'Standing and running rigging', 'Jarcia firme y de labor', 'Stehendes und laufendes Gut'],
+    ['Elementy dobrane do konfiguracji takielunku i sposobu użytkowania jednostki.', 'Components selected for your rig configuration and how you use your vessel.', 'Componentes adaptados a la configuración del aparejo y al uso de la embarcación.', 'Komponenten passend zur Rigg-Konfiguration und zur Nutzung des Schiffes.'],
+    ['Systemy rolowania żagli', 'Sail furling systems', 'Sistemas de enrollado de velas', 'Rollreffsysteme'],
+    ['Rozwiązania ułatwiające sprawną i bezpieczną obsługę żagli.', 'Solutions for smooth and safe sail handling.', 'Soluciones para un manejo ágil y seguro de las velas.', 'Lösungen für eine einfache und sichere Bedienung der Segel.'],
+    ['Systemy hydrauliczne', 'Hydraulic systems', 'Sistemas hidráulicos', 'Hydraulische Systeme'],
+    ['Komponenty wspierające niezawodną pracę systemów pokładowych.', 'Components that help onboard systems perform reliably.', 'Componentes que contribuyen al funcionamiento fiable de los sistemas de a bordo.', 'Komponenten für den zuverlässigen Betrieb der Bordsysteme.'],
+    ['Osprzęt i liny na pokładzie jachtu żaglowego', 'Hardware and lines aboard a sailing yacht', 'Herrajes y cabos a bordo de un velero', 'Beschläge und Leinen an Bord einer Segelyacht'],
+    ['Osprzęt', 'Hardware', 'Herrajes', 'Beschläge'],
+    ['Niezawodność w każdym detalu', 'Reliability in every detail', 'Fiabilidad en cada detalle', 'Zuverlässigkeit bis ins Detail'],
+
+    ['Od koncepcji do realizacji', 'From concept to delivery', 'De la idea a la ejecución', 'Vom Konzept bis zur Umsetzung'],
+    ['Wdrożenie i testy', 'Implementation and testing', 'Implementación y pruebas', 'Umsetzung und Tests'],
+    ['Każdy projekt rozpoczynamy od analizy potrzeb, parametrów jachtu i warunków użytkowania.', 'We begin every project by analysing the yacht’s requirements, specifications and operating conditions.', 'Iniciamos cada proyecto analizando las necesidades, las características del velero y sus condiciones de uso.', 'Jedes Projekt beginnt mit der Analyse der Anforderungen, der Yachtparameter und der Einsatzbedingungen.'],
+    ['Sprawdzamy, jak projekt współpracuje z konstrukcją i istniejącymi systemami jednostki.', 'We verify how the design works with the vessel’s structure and existing systems.', 'Comprobamos cómo se integra el diseño con la estructura y los sistemas existentes de la embarcación.', 'Wir prüfen, wie sich die Lösung in die Konstruktion und die bestehenden Systeme des Schiffes einfügt.'],
+    ['Realizacja i optymalizacja', 'Delivery and optimisation', 'Ejecución y optimización', 'Umsetzung und Optimierung'],
+    ['Prowadzimy rozwiązanie do gotowego efektu i dopracowujemy je w praktyce.', 'We take the solution through to completion and refine it in practice.', 'Llevamos la solución hasta su finalización y la perfeccionamos en la práctica.', 'Wir führen die Lösung bis zur Fertigstellung und optimieren sie in der Praxis.'],
+
+    ['Rozwiązania dla muzeów i obiektów wystawienniczych.', 'Solutions for museums and exhibition venues.', 'Soluciones para museos y espacios expositivos.', 'Lösungen für Museen und Ausstellungsräume.'],
+    ['Systemy ekspozycyjne', 'Display systems', 'Sistemas de exposición', 'Ausstellungssysteme'],
+    ['Zadaszenia i przesłony', 'Canopies and screens', 'Cubiertas y pantallas', 'Überdachungen und Abschirmungen'],
+    ['Systemy bezpieczeństwa', 'Safety systems', 'Sistemas de seguridad', 'Sicherheitssysteme'],
+    ['Konstrukcje cięgnowe dostosowane do przestrzeni i jej funkcji.', 'Tensile structures tailored to the space and its function.', 'Estructuras de cables adaptadas al espacio y a su función.', 'Seilkonstruktionen, abgestimmt auf Raum und Nutzung.'],
+    ['Precyzyjne rozwiązania projektowane z myślą o trwałym i bezpiecznym użytkowaniu.', 'Precisely engineered solutions designed for lasting, safe use.', 'Soluciones diseñadas con precisión para un uso seguro y duradero.', 'Präzise entwickelte Lösungen für eine dauerhafte und sichere Nutzung.'],
+    ['Maszt i żagle jachtu żaglowego', 'Mast and sails of a sailing yacht', 'Mástil y velas de un velero', 'Mast und Segel einer Segelyacht'],
+    ['Systemy cięgnowe', 'Tensile systems', 'Sistemas de cables', 'Seilsysteme'],
+    ['Technologia i forma', 'Technology and form', 'Tecnología y forma', 'Technologie und Form'],
+
+    ['Planowanie projektu', 'Project planning', 'Planificación del proyecto', 'Projektplanung'],
+    ['Ustalamy zakres, priorytety i harmonogram dopasowany do potrzeb jednostki.', 'We define the scope, priorities and schedule to suit the vessel’s needs.', 'Definimos el alcance, las prioridades y el calendario según las necesidades de la embarcación.', 'Wir legen Umfang, Prioritäten und Zeitplan passend zu den Anforderungen des Schiffes fest.'],
+    ['Koordynacja wykonawców', 'Contractor coordination', 'Coordinación de contratistas', 'Koordination der Auftragnehmer'],
+    ['Łączymy działania wykonawców, dostawców i zespołów pracujących przy jachcie.', 'We coordinate the contractors, suppliers and teams working on the yacht.', 'Coordinamos a los contratistas, proveedores y equipos que trabajan en el velero.', 'Wir koordinieren die Auftragnehmer, Lieferanten und Teams, die an der Yacht arbeiten.'],
+    ['Nadzór i kontrola prac', 'Work supervision and control', 'Supervisión y control de los trabajos', 'Überwachung und Kontrolle der Arbeiten'],
+    ['Monitorujemy postęp oraz jakość realizacji na kolejnych etapach projektu.', 'We monitor progress and quality throughout each project stage.', 'Supervisamos el progreso y la calidad en cada etapa del proyecto.', 'Wir überwachen Fortschritt und Qualität in jeder Projektphase.'],
+    ['Dostawy i montaże', 'Deliveries and installations', 'Entregas e instalaciones', 'Lieferungen und Montage'],
+    ['Dbamy o sprawną organizację dostaw i prac montażowych.', 'We ensure deliveries and installation work are efficiently organised.', 'Organizamos eficazmente las entregas y los trabajos de instalación.', 'Wir sorgen für eine reibungslose Organisation von Lieferungen und Montagearbeiten.'],
+    ['Wspieramy decyzje techniczne i ekonomiczne w oparciu o cele projektu.', 'We support technical and financial decisions in line with the project’s goals.', 'Apoyamos las decisiones técnicas y económicas de acuerdo con los objetivos del proyecto.', 'Wir unterstützen technische und wirtschaftliche Entscheidungen im Einklang mit den Projektzielen.']
   ];
 
   const norm = text => text.replace(/\s+/g, ' ').trim();
