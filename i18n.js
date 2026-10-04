@@ -1,5 +1,5 @@
 (() => {
-  const LANGS = ['pl', 'en', 'es', 'de'];
+  const LANGS = ['pl', 'en', 'es'];
   const STORAGE_KEY = 'jr-lang';
 
   // Każdy wiersz: [polski (klucz), angielski, hiszpański, niemiecki]
@@ -233,7 +233,7 @@
   const meta = document.querySelector('meta[name="description"]');
   const originalTitle = document.title;
   const originalDescription = meta?.getAttribute('content') ?? '';
-  const names = { pl: 'Polski', en: 'English', es: 'Español', de: 'Deutsch' };
+  const names = { pl: 'Polski', en: 'English', es: 'Español' };
 
   let current = 'pl';
 
