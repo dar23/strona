@@ -193,8 +193,8 @@ h1, h2, h3, .section-title { font-family: var(--heading-font); font-weight: 400;
 .process-track h3 { margin: .65rem 0 .45rem; font-size: 1.25rem; font-weight: 400; }
 .process-track p { max-width: 14rem; margin: 0; color: var(--muted); font-size: 18px; line-height: 1.6; }
 .team-section { padding-top: 3rem; }
-.team-intro { align-items: start; justify-content: center; margin-bottom: 3rem; }
-.team-intro > p { width: 100%; max-width: 58rem; }
+.team-intro { width: min(100%, 50.9rem); margin: 2.2rem auto 2rem; align-items: start; justify-content: center; }
+.team-intro > p { width: 100%; max-width: none; font-size: 1.05rem; line-height: 1.75; }
 .team-grid { margin-top: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 25rem)); justify-content: center; gap: .9rem; }
 .team-card { position: relative; min-height: 245px; padding: 1.3rem; display: flex; flex-direction: column; justify-content: end; overflow: hidden; border: 1px solid var(--line); border-radius: .7rem; background: linear-gradient(145deg, #172020, #0d1314); }
 .team-role { position: absolute; top: 1.2rem; left: 1.3rem; color: var(--accent); font-size: .62rem; letter-spacing: .13em; text-transform: uppercase; }
@@ -252,6 +252,7 @@ h1, h2, h3, .section-title { font-family: var(--heading-font); font-weight: 400;
   .mission-section { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .service-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .team-intro { width: 100%; }
   .service-card:nth-child(n) h3 { font-size: 1.2rem; }
   .service-card { padding: 1.2rem 1.4rem; border-radius: 1.2rem; }
   .service-card:nth-child(n) { border-radius: 1.2rem; }
