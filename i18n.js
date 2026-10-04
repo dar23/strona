@@ -270,8 +270,8 @@
   };
 
   const buildSwitch = () => {
-    document.querySelectorAll('.mobile-menu').forEach(menu => {
-      if (menu.querySelector('.lang-switch')) return;
+    document.querySelectorAll('.nav-shell').forEach(nav => {
+      if (nav.querySelector('.lang-switch')) return;
       const group = document.createElement('div');
       group.className = 'lang-switch';
       group.setAttribute('role', 'group');
@@ -286,7 +286,7 @@
         button.addEventListener('click', () => setLanguage(code));
         group.appendChild(button);
       });
-      menu.appendChild(group);
+      nav.insertBefore(group, nav.querySelector('.menu-toggle'));
     });
   };
 
